@@ -7,7 +7,7 @@ setup(
     author_email="brian@signalwire.com",
     description="A Python package for generating SignalWire Markup Language (SWML)",
     long_description=open("README.md", "r").read(),
-    long_description_content_type="text/markdown"
+    long_description_content_type="text/markdown",
     url="https://github.com/briankwest/signalwire-swml",
     packages=find_packages(),
     license="MIT",
