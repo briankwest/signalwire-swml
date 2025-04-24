@@ -2,7 +2,7 @@ import json
 from .ordered import get_ordered_dict, dump_yaml
 
 class SignalWireSWML:
-    VERSION = '1.24'
+    VERSION = '1.25'
 
     def __init__(self, version='1.0.0'):
         self._content = {
