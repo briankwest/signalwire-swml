@@ -1,5 +1,6 @@
 from signalwire_swml import SignalWireSWML
 from signalwire_pom import PromptObjectModel
+from jsonschema import validate, ValidationError
 
 def build_moviebot_prompt():
     pom = PromptObjectModel()
@@ -89,14 +90,12 @@ def build_movie_ai_agent():
 
     # Set AI params
     swml.add_aiparams({
-        "debug_webhook_level": "2",
-        "debug_webhook_url": "https://botworks/debugwebhook/1/11",
-        "enable_accounting": "true"
+        "debug_webhook_level": 1,
+        "debug_webhook_url": "https://botworks/debugwebhook/1/11"
     })
 
     # Set AI post prompt
     swml.set_aipost_prompt({
-        "max_tokens": 0,
         "temperature": 0.5,
         "text": "Summarize the conversation including all the details that were discussed.",
         "top_p": 0.5
@@ -118,8 +117,23 @@ def build_movie_ai_agent():
     swml.add_aiapplication("main")
 
     # Output as JSON or YAML
-    print(swml.render_json(ordered=True))
+    output_json = swml.render_json(ordered=True)
+    print(output_json)
     # print(swml.render_yaml(ordered=True))  # Uncomment for YAML output
+
+    # --- Schema Validation ---
+    try:
+        import json
+        # Load schema from file (adjust path as needed)
+        with open('SWMLObject.json') as schema_file:
+            schema = json.load(schema_file)
+        data = json.loads(output_json)
+        validate(instance=data, schema=schema)
+        print("\nSchema validation: SUCCESS")
+    except FileNotFoundError:
+        print("\nSchema file 'schema.json' not found. Skipping validation.")
+    except ValidationError as e:
+        print("\nSchema validation: FAILED\n", e)
 
 if __name__ == "__main__":
     build_movie_ai_agent()
