@@ -1,4 +1,4 @@
-from signalwire_swml import SignalWireSWML
+from signalwire import SignalWireSWML
 from signalwire_pom import PromptObjectModel
 from jsonschema import validate, ValidationError
 
