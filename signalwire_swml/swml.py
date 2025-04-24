@@ -1,5 +1,4 @@
 import json
-import yaml
 from .ordered import get_ordered_dict, dump_yaml
 
 class SignalWireSWML:
