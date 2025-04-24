@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="signalwire-swml",
-    version="1.25",
+    version="2.0",
     author="Brian West",
     author_email="brian@signalwire.com",
     description="A Python package for generating SignalWire Markup Language (SWML)",

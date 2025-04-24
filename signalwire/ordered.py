@@ -8,7 +8,6 @@ template, ensuring consistent output structure.
 from collections import OrderedDict
 import yaml
 from yaml.representer import SafeRepresenter
-import pprint
 
 # Define the key order template for SWML data
 KEY_ORDER = {
