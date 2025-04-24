@@ -187,3 +187,25 @@ class SignalWireSWML:
         content = get_ordered_dict(self._content) if ordered else self._content
         # Always use dump_yaml to avoid !!python/object/apply:collections.OrderedDict
         return dump_yaml(content)
+
+    @staticmethod
+    def load_json(path_or_str, from_string=False):
+        """
+        Load a JSON file (or string if from_string=True) and return the Python object.
+        """
+        import json
+        if from_string:
+            return json.loads(path_or_str)
+        with open(path_or_str, 'r') as f:
+            return json.load(f)
+
+    @staticmethod
+    def load_yaml(path_or_str, from_string=False):
+        """
+        Load a YAML file (or string if from_string=True) and return the Python object.
+        """
+        import yaml
+        if from_string:
+            return yaml.safe_load(path_or_str)
+        with open(path_or_str, 'r') as f:
+            return yaml.safe_load(f)

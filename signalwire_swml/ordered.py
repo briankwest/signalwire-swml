@@ -242,8 +242,7 @@ def dump_yaml(data, **kwargs):
         'indent': 2
     }
     default_kwargs.update(kwargs)
-    pprint.pprint(data)
     data = ordered_to_dict(data)
-    print("DEBUG: Top-level type before dump:", type(data))
-    print("DEBUG: Type of data['sections']:", type(data.get('sections')))
+#    print("DEBUG: Top-level type before dump:", type(data))
+#    print("DEBUG: Type of data['sections']:", type(data.get('sections')))
     return yaml.dump(data, Dumper=BlockStyleDumper, **default_kwargs) 
