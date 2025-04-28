@@ -19,7 +19,7 @@ The `SignalWireSWML` class is the core of this package. It allows you to program
 Below is a complete example of how to use `SignalWireSWML` to build a MovieBot agent with advanced AI and SWAIG integration:
 
 ```python
-from signalwire import SignalWireSWML
+from signalwire-swml import SignalWireSWML
 
 def build_movie_ai_agent():
     swml = SignalWireSWML(version="1.0.0")
