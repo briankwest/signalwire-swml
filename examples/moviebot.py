@@ -1,5 +1,5 @@
-from signalwire import SignalWireSWML
-from signalwire import PromptObjectModel
+from signalwire_swml.swml import SignalWireSWML
+from signalwire_pom.pom import PromptObjectModel
 from jsonschema import validate, ValidationError
 
 def build_moviebot_prompt():

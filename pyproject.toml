@@ -1,6 +1,6 @@
 [project]
 name = "signalwire-swml"
-version = "2.2"
+version = "2.7"
 description = "A Python package for generating SignalWire Markup Language (SWML)"
 readme = "README.md"
 authors = [
@@ -23,7 +23,7 @@ Issues = "https://github.com/briankwest/signalwire-swml/issues"
 
 
 [tool.setuptools]
-packages = ["signalwire-swml"]
+packages = ["signalwire_swml"]
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
